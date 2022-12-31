@@ -1,0 +1,25 @@
+<div class="parent_div full-width">
+  <h1 class="h1_heading">Add User Details</h1>
+  <mat-form-field class="full-width">
+    <mat-label>First Name</mat-label>
+    <input matInput placeholder="" [(ngModel)]="firstName" maxlength="100" required>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Last Name</mat-label>
+    <input matInput placeholder="" [(ngModel)]="lastName" maxlength="100" required>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput [(ngModel)]="email" [formControl]="emailFormControl" placeholder="Ex. pat@example.com" required>
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</div>
+<div>
+  <button mat-raised-button color="primary" (click)="onSaveUser()">Save User</button>
+  <button class="cancel_button" mat-raised-button (click)="onCancelAdd()">Cancel</button>
+</div>

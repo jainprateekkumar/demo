@@ -1,0 +1,17 @@
+.parent_div{
+  margin: 20px, 20px, 20px, 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.list_heading{
+    text-align: center;
+    font-weight: 600;
+}
+
+.list_add_button{
+    margin: 20px;
+    float: right;
+}
